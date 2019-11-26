@@ -2,7 +2,7 @@ import numpy as np
 import pandas
 
 
-def are_numeric_columns(df, columns=[]):
+def are_numeric_columns(df, columns):
     """ Check if a list of columns are numpy.number    """
     """ 
     Given a list of column names, check to see if each of those appears
@@ -22,7 +22,6 @@ def are_numeric_columns(df, columns=[]):
     """
     # Select numeric columns from dataframe
     numeric_cols = df.select_dtypes(include=np.number).columns.values.tolist()
-    cols_in_numeric_cols = [True if col in numeric_cols else False 
+    cols_in_numeric_cols = [True if col in numeric_cols else False
                             for col in columns]
     return cols_in_numeric_cols
-  
