@@ -1,4 +1,4 @@
-from src.utils.text.pii import (
+from data_science_utils.utils.text.pii import (
     remove_pii_ssn,
     remove_pii_phone,
     remove_pii_name,

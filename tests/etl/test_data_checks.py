@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from src.utils.etl.data_checks import are_numeric_columns
+from data_science_utils.utils.etl.data_checks import are_numeric_columns
 
 
 def test_are_numeric_columns():

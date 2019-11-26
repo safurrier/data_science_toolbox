@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from src.utils.pandas.profiling.columns import (
+from data_science_utils.utils.pandas.profiling.columns import (
     flatten_multiindex_columns,
 )
 

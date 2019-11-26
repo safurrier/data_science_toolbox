@@ -24,7 +24,7 @@ Project Organization
     │   └── profiling      
     ├── text               <- Code for dealing with text. Includes distributed loading of text corpus, 
     │                         entity statement extraction, sentiment analysis, etc.	
-    ├── __init__.py        <- Makes src a Python module               
+    ├── __init__.py        <- Makes data_science_utils a Python module               
     ├── project_utils.py   <- For project specific utilities
     └── LICENSE
     

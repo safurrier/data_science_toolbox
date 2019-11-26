@@ -94,7 +94,7 @@ def data_dictionary(df: pd.DataFrame, include_db_storage_type=False, number_of_e
             'Dtype': dtype_group_dict[column_dtype],
             'Memory_Type': column_dtype,
             'Cardinality': cardinality,
-            'Percent_Null': round(number_of_nulls / row_count, 3)
+            'Percent_Null': round(number_of_nulls / row_count, 3),
             'Percent_Unique': pct_unique,
             'Number_of_Nulls': number_of_nulls,
             'Most_Common_Value': most_common_value,
