@@ -5,8 +5,8 @@ import pandas as pd
 import numpy as np
 import click
 import pathlib
-from data_science_utils.utils.io.get_absolute_fpath import get_absolute_fpath
-from data_science_utils.utils.io.python_config_dict import config_dict_from_python_fpath
+from data_science_toolbox.io.get_absolute_fpath import get_absolute_fpath
+from data_science_toolbox.io.python_config_dict import config_dict_from_python_fpath
 
 # Silence C dtype mapping warnings
 warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)

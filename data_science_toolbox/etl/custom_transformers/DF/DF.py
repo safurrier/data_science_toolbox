@@ -5,7 +5,7 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.preprocessing import FunctionTransformer, StandardScaler, RobustScaler
 from sklearn.preprocessing import Imputer, MultiLabelBinarizer
 from sklearn.impute import SimpleImputer
-from data_science_utils.utils.pandas.profiling.data_types import df_binary_columns_list
+from data_science_toolbox.pandas.profiling.data_types import df_binary_columns_list
 from functools import reduce
 import warnings
 

@@ -1,7 +1,13 @@
 import spacy
 import re
-nlp = spacy.load("en_core_web_sm")
-
+try:
+    language_model = 'en_core_web_sm'
+    nlp = spacy.load(language_model)
+except OSError:
+    print(f'Downloading language model "{language_model}" spaCy')
+    from spacy.cli import download
+    download(language_model)
+    nlp = spacy.load(language_model)
 
 def remove_pii_name(text: str, replacement: str = '--NAME--') -> str:
     """
@@ -149,18 +155,3 @@ def remove_pii_ssn(text: str, replacement: str = '--SSN--') -> str:
 
     replacement_text = re.sub(ssn_regex_pattern, replacement, text)
     return replacement_text
-
-
-text_with_ssn = "My social security number is 123-45-6789"
-print(remove_pii_ssn(text_with_ssn))
-
-text_with_phone = "Give me a call at 109-876-5432"
-print(remove_pii_phone(text_with_phone))
-
-text_with_name = "I was working the forklift and then a" \
-    " bowling ball fell from the sky and hit " \
-    "Oscar in the head."
-print(remove_pii_name(text_with_name))
-
-text_with_email = "I can be reached at human_bean@me.com"
-print(remove_pii_email(text_with_email))
