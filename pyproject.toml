@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "data_science_toolbox"
-version = "0.1.0"
+version = "0.1.1"
 description = "Various code to aid in data science projects for tasks involving data cleaning, ETL, EDA, NLP, viz, feature engineering, feature selection, model validation, etc."
 readme = "README.md"
 authors = ["safurrier <safurrier@gmail.com>"]
 license = "MIT"
-homepage = "https://github.com/safurrier/data_science_utils"
+homepage = "https://github.com/safurrier/data_science_toolbox"
 
 
 [tool.poetry.dependencies]
