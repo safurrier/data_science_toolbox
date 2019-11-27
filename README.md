@@ -1,4 +1,5 @@
-# data-science-toolbox
+# data_science_toolbox
+
 =====================
 
 Various code to aid in data science projects for tasks involving data cleaning,
