@@ -12,6 +12,7 @@ Project Organization
     │   │
     │   ├── gists                  <- Code gists with commonly used code (change to root
     │   │                             directory, connect to database, profile data, etc)
+    │   ├── data_checks            <- Code for data checks and assertions
     │   ├── io                     <- Code for input/output utilities
     │   ├── etl                    <- For building reproducible ETL pipelines, including data
     │   │                             checks and transformers
