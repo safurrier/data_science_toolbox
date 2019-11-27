@@ -10,14 +10,14 @@ Project Organization
     ├── README.md              
     ├── data_science_toolbox   <- Project source code
     │   │
-    │   ├── gists                  <- Code gists with commonly used code (change to root
-    │   │                             directory, connect to database, profile data, etc)
-    │   ├── data_checks            <- Code for data checks and assertions
-    │   ├── io                     <- Code for input/output utilities
-    │   ├── etl                    <- For building reproducible ETL pipelines, including data
-    │   │                             checks and transformers
-    │   ├── ml                     <- Machine Learning utility code (feature engineering, etc) 
-    │   ├── pandas                 <- Pandas related utility code
+    │   ├── gists              <- Code gists with commonly used code (change to root
+    │   │                         directory, connect to database, profile data, etc)
+    │   ├── data_checks        <- Code for data checks and assertions
+    │   ├── io                 <- Code for input/output utilities
+    │   ├── etl                <- For building reproducible ETL pipelines, including data
+    │   │                         checks and transformers
+    │   ├── ml                 <- Machine Learning utility code (feature engineering, etc) 
+    │   ├── pandas             <- Pandas related utility code
     │   │   ├── analysis                  
     │   │   ├── cleaning
     │   │   ├── engineering
@@ -30,7 +30,8 @@ Project Organization
     │   ├── text               <- Code for dealing with text. Includes distributed loading of text corpus, 
     │   │                         entity statement extraction, sentiment analysis, pii removal etc.
     │   └── __init__.py        <- Makes data_science_toolbox a Python module               
-    ├── tests
+    ├── tests                  <- Pytest unit tests 
+    ├── dist                   <- tars and whls of version builds
     ├── LICENSE
     ├── poetry.lock
     └── pyproject.toml 
