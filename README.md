@@ -1,10 +1,18 @@
-data-science-toolbox
+# data-science-toolbox
 =====================
 
 Various code to aid in data science projects for tasks involving data cleaning,
 ETL, EDA, NLP, viz, feature engineering, feature selection, model training and validation etc.
 
-Project Organization
+## Installation
+
+### Using pip
+
+You can install using the pip package manager by running
+
+    pip install data-science-toolbox
+
+## Project Organization
 
 ---------------------
     ├── README.md              
