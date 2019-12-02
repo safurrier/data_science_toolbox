@@ -1,7 +1,5 @@
 # data_science_toolbox
 
-=====================
-
 Various code to aid in data science projects for tasks involving data cleaning,
 ETL, EDA, NLP, viz, feature engineering, feature selection, model training and validation etc.
 
@@ -9,9 +7,17 @@ ETL, EDA, NLP, viz, feature engineering, feature selection, model training and v
 
 ### Using pip
 
-You can install using the pip package manager by running
+You can install from PyPI using the pip package manager by running
 
     pip install data-science-toolbox
+
+You can install the latest version by cloning this repo and installing from src
+
+    git clone https://github.com/safurrier/data_science_toolbox
+
+    cd data_science_toolbox    
+
+    pip install .    
 
 ## Project Organization
 
