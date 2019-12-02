@@ -2,7 +2,7 @@ import pandas as pd
 import pathlib
 from typing import List
 
-def read_data(fpath: str, keep_cols: List[str]=None, reader_kwargs: dict = {}, ) -> pd.DataFrame:
+def read_data(fpath: str, columns: List[str]=None, reader_kwargs: dict = {}, ) -> pd.DataFrame:
     """Read in a file with a key column and subsequent associated data.
     Parameters for reading in added as dict to reader_kwargs param
     """
@@ -21,7 +21,7 @@ def read_data(fpath: str, keep_cols: List[str]=None, reader_kwargs: dict = {}, )
     elif (file_format == '.xlsx'):
         reader = pd.read_excel
     elif (file_format == '.hdf'):
-        reader = pd.read_excel        
+        reader = pd.read_hdf        
 
     # Read in filepath:
     try:
@@ -32,21 +32,21 @@ def read_data(fpath: str, keep_cols: List[str]=None, reader_kwargs: dict = {}, )
     
     missing_cols = []
     # If specificed, look for subset of columns
-    if keep_cols:
-        keep_cols = [col
+    if columns:
+        columns = [col
                      if col in data.columns.values.tolist()
                      else missing_cols.append(col)
                      for col
-                     in keep_cols]
+                     in columns]
     else:
-        keep_cols = data.columns.values.tolist()
+        columns = data.columns.values.tolist()
     
-    assert keep_cols != [None], 'No columns from keep_cols param found in data' 
+    assert columns != [None], 'No columns from columns param found in data' 
     # Print missing columns if present
     if missing_cols:
         print(f'WARNING: These columns were not found in the data: {missing_cols}')
 
     # Subset to desired columns
-    data = data[keep_cols]
+    data = data[columns]
 
     return data
