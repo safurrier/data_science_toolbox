@@ -3,9 +3,37 @@ import pathlib
 from typing import List
 
 def read_data(fpath: str, columns: List[str]=None, reader_kwargs: dict = {}, ) -> pd.DataFrame:
-    """Read in a file with a key column and subsequent associated data.
-    Parameters for reading in added as dict to reader_kwargs param
     """
+    Pass a filepath and have said file read in as a Pandas DataFrame.
+    Supports csv, excel, hdf, pickle
+    Parameters for reading in added as dict to reader_kwargs param
+
+    
+    Given a list of column names, check to see if each of those appears
+    in the columns of a dataframe filtered by dtype=np.number
+
+    Parameters
+    ----------
+    fpath : str
+        A string filepath to the data file 
+    columns : List[str]
+        A list of columns to keep
+    reader_kwargs : dict
+        An optional dictionary of pandas reader kwargs
+    -------
+    DataFrame
+        A pandas DataFrame read in from the filepath
+
+    Example
+    -------
+
+    hdf_kwargs = {
+        'key': 'data'
+    }
+    df = read_data('my_hdf.hdf', reader_kwargs=hdf_kwargs)
+
+    """
+
     # Check if extension in supported file format
     fpath = pathlib.Path(fpath)
     file_format = fpath.suffix
