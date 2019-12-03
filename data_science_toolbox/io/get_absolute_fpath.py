@@ -1,4 +1,6 @@
 import os
+import warnings
+
 def get_absolute_fpath(target_fname: str = 'README.md', levels_to_check: int = 10, verbose=0):
     """Pass a filename that exists in a directory an unknown number of
     levels higher. Return the string absolute path of the file
@@ -13,7 +15,6 @@ def get_absolute_fpath(target_fname: str = 'README.md', levels_to_check: int = 1
                     f"""\n\nUnable to find directory with file {target_fname} within {levels_to_check} parent directories""")
             return
         # Check if README exists
-        # cwd_files =
         if os.path.isfile(target_fname):
             target_dir = os.getcwd()
             if verbose:
