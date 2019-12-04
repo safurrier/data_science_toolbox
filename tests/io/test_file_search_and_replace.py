@@ -10,14 +10,6 @@ TEST_ALL_SHEETS = ['one', 'two', 'three']
 TEST_SHEETS_INCLUDE = ['one', 'three']
 TEST_SHEETS_EXCLUDE = ['two']
 
-# Create a dir in tests
-# Create two missnamed files
-# Rename the two
-# Check that both properly named files are in dir
-# store these
-# delete files and directory
-# assert the names are correct
-
 #########
 # WARNING
 #########
@@ -28,6 +20,7 @@ TEST_SHEETS_EXCLUDE = ['two']
 # you do not wish deleted
 
 TEST_DIR_CREATE = pathlib.Path('tests/io/search_and_replace_test_files')
+
 
 TEST_SEARCH_FNAMES = ['incorrect_fname_1.txt',
                       'incorrect_fname_2.txt',
@@ -63,6 +56,3 @@ def test_file_search_and_replace():
 
     # Assert have been correctly replaced
     assert not set(TEST_REPLACED_FNAMES).difference(replaced_fnames)
-
-
-# %%
