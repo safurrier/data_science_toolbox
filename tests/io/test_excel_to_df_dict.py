@@ -51,9 +51,3 @@ def test_excel_to_df_dict_include_and_exclude_sheets():
     # With no intersection
     assert set(test_df_dict.keys()) == set(
         TEST_SHEETS_INCLUDE).difference(TEST_SHEETS_EXCLUDE)
-
-
-test_excel_to_df_dict()
-test_excel_to_df_dict_include_sheets()
-test_excel_to_df_dict_exclude_sheets()
-test_excel_to_df_dict_include_and_exclude_sheets()

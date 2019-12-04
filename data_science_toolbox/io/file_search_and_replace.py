@@ -2,7 +2,8 @@ import os
 import re
 import pathlib
 
-def file_search_and_replace(directory: str, search: str, replace: str, verbose: bool=True) -> None:
+
+def file_search_and_replace(directory: str, search: str, replace: str, verbose: bool = True) -> None:
     """Given a directory, search all filenames in it for the regex pattern provided. 
     If found, replace with the provided string by renaming.
     By default, verbose=True prints message when file is renamed
@@ -17,7 +18,7 @@ def file_search_and_replace(directory: str, search: str, replace: str, verbose: 
         String pattern to replace the match with
     verbose : bool
         An optional dictionary of pandas excel reader kwargs
-    
+
     Return
     -------
     None
@@ -31,12 +32,12 @@ def file_search_and_replace(directory: str, search: str, replace: str, verbose: 
         + file_misspelled2.txt
 
     file_search_and_replace('sample_dir', 'missss', 'miss')
-    
+
     > Renaming:
     > sample_dir/file_misssspelled1.txt
     > To:
     > sample_dir/file_misspelled1.txt)
-    """    
+    """
 
     # Make path out of provided directory
     directory_path = pathlib.Path(directory)
@@ -50,4 +51,5 @@ def file_search_and_replace(directory: str, search: str, replace: str, verbose: 
             os.rename(directory_path / filename, directory_path / new_fname)
             # If verbose print the renamed files
             if verbose:
-                print(f'Renaming:\n{directory_path / filename}\nTo:\n{directory_path / new_fname}\n\n')
+                print(
+                    f'Renaming:\n{directory_path / filename}\nTo:\n{directory_path / new_fname}\n\n')
