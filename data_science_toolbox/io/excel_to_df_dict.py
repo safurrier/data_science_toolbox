@@ -20,6 +20,8 @@ def excel_to_df_dict(excel_path: str = None,
         A list of sheets to exclude
     parse_kwds : dict
         An optional dictionary of pandas excel reader kwargs
+    
+    Return
     -------
     DataFrame
         A pandas DataFrame read in from the filepath
