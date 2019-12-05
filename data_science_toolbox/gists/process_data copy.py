@@ -8,6 +8,7 @@ import pathlib
 from data_science_toolbox.io.get_absolute_fpath import get_absolute_fpath
 from data_science_toolbox.io.python_config_dict import config_dict_from_python_fpath
 from data_science_toolbox.io.read_data import read_data
+from data_science_toolbox.io.export_data import export_data
 
 # Silence C dtype mapping warnings
 warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)
@@ -90,13 +91,12 @@ def process_data(config_path: str = None,
     # Turn string paths into pathlib Paths
     db_import_path = pathlib.Path(db_import_path)
     db_export_path = pathlib.Path(db_export_path)
+    # Read Config
     config = config_dict_from_python_fpath(config_path)
 
-    # Establish database connection
-    # conn = sqlite3.connect(db_import_path.as_posix())
-    # Read  Data
-    # df = pd.read_sql(sql=f'SELECT * FROM {db_input_table}', con=conn)
-    df = read_data(db_import_path.as_posix(), db_input_table)
+    # Read Data
+    df = read_data(db_import_path.as_posix(),
+                   reader_kwargs={'key': db_input_table})
     if verbose:
         click.echo(
             f'Reading in data from table {db_input_table} at {db_import_path.as_posix()}')
@@ -104,7 +104,6 @@ def process_data(config_path: str = None,
     pipeline = config['PIPELINE']
     transformed_df = pipeline.fit_transform(df)
     # Write to DB
-    # Write each DF into the database, replacing the table if it previously existed
     if verbose:
         click.echo(
             f'Final datashape for transformed data is {transformed_df.shape}')
@@ -112,8 +111,8 @@ def process_data(config_path: str = None,
     if verbose:
         click.echo(
             f'Placing data into table "{db_export_table}" in the db at {db_export_path.as_posix()}')
-    # transformed_df.to_sql(db_export_table, con=conn, if_exists='replace', index=False)
-    transformed_df.to_hdf(db_export_path.as_posix(), db_export_table)
+    export_data(transformed_df, db_export_path.as_posix(),
+                exporter_kwargs={'key': db_export_table})
 
 
 if __name__ == '__main__':
