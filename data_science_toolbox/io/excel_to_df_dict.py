@@ -20,7 +20,7 @@ def excel_to_df_dict(excel_path: str = None,
         A list of sheets to exclude
     parse_kwds : dict
         An optional dictionary of pandas excel reader kwargs
-    
+
     Return
     -------
     DataFrame
@@ -34,7 +34,6 @@ def excel_to_df_dict(excel_path: str = None,
     > ['sheet1', 'sheet2']
     """
 
-
     if not exclude_sheets:
         exclude_sheets = []
     if not parse_kwds:
@@ -43,9 +42,9 @@ def excel_to_df_dict(excel_path: str = None,
 
     # Read in Excel
     xl = pd.ExcelFile(excel_path.as_posix())
-    # If no include sheets specified, keep all 
+    # If no include sheets specified, keep all
     if not include_sheets:
-        include_sheets = list(xl.sheet_names)   
+        include_sheets = list(xl.sheet_names)
     # If specified load data in df_dict
     df_dict = {}
     for sheet_name in xl.sheet_names:
@@ -60,4 +59,4 @@ def excel_to_df_dict(excel_path: str = None,
                 del df_dict[sheet_name]
             except KeyError:
                 pass
-    return df_dict 
+    return df_dict
