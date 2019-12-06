@@ -1,5 +1,6 @@
 import pandas as pd
 import pathlib
+import warnings
 from typing import Dict, List
 
 
@@ -57,6 +58,10 @@ def excel_to_df_dict(excel_path: str = None,
         if sheet_name in exclude_sheets:
             try:
                 del df_dict[sheet_name]
+                warnings.warn(f'Sheet "{sheet_name}"" was ultiamtely not included as it'
+                              f'was specified in "exclude_sheets".'
+                              f'However it was also specified in "include sheets" . . .'
+                              )
             except KeyError:
                 pass
     return df_dict

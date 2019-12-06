@@ -65,5 +65,6 @@ def test_excel_to_df_dict_include_and_exclude_sheets(data_path,
     assert isinstance(test_df_dict, dict)
     assert isinstance(list(test_df_dict.values())[0], pd.DataFrame)
     # Assert correct sheets. Included are included, excluded are excluded
-    # With no intersection
+    # With no intersection. Excluded column take precendence to
+    # be removed even if in excluded columns
     assert list(test_df_dict.keys()) == correct_sheets
