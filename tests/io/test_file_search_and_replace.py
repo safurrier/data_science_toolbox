@@ -69,6 +69,7 @@ def test_file_search_and_replace(create_dir,
 
     # Get filenames
     replaced_fnames = os.listdir(create_dir.as_posix())
+
     # Remove directory and files
     shutil.rmtree(create_dir.as_posix())
 
