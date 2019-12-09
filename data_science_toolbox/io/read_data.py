@@ -22,7 +22,7 @@ def read_data(fpath: str, columns: List[str] = None, reader_kwargs: dict = {}, )
     reader_kwargs : dict
         An optional dictionary of pandas reader kwargs
 
-    Return
+    Returns
     -------
     DataFrame
         A pandas DataFrame read in from the filepath
