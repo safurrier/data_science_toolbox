@@ -51,6 +51,7 @@ def get_absolute_fpath(target_fname: str = 'README.md', levels_to_check: int = 1
             target_dir = os.getcwd()
             if verbose:
                 print(f'Found target file in {target_dir}')
+            break
         # If not found move back one directory level
         else:
             os.chdir('../')
